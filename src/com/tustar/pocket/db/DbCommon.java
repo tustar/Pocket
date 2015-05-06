@@ -1,7 +1,9 @@
 package com.tustar.pocket.db;
 
+import android.R.string;
+
 public interface DbCommon {
-	
+
 	public static final int DB_VERSION = 1;
 	public static final String DB_NAME = "pocket.db";
 
@@ -17,4 +19,6 @@ public interface DbCommon {
 		public final String ZIP = "zip";
 		public final String CASH_ON_DELIVERY = "cash_on_delivery";
 	}
+
+	public static final String CREATE_ADDRESS = "";
 }

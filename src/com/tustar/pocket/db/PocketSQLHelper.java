@@ -27,11 +27,21 @@ public class PocketSQLHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		Logger.d(TAG, "onCreate :: db = " + db);
+		db.execSQL(DbCommon.CREATE_ADDRESS);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		Logger.d(TAG, "onUpgrade :: db = " + db + ", oldVersion = "
 				+ oldVersion + ", newVersion = " + newVersion);
+		switch (oldVersion) {
+		case 1:
+			db.execSQL(DbCommon.CREATE_ADDRESS);
+		case 2:
+			break;
+
+		default:
+			break;
+		}
 	}
 }

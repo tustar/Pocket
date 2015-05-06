@@ -6,11 +6,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tustar.pocket.MainActivity" >
+    tools:context="com.tustar.pocket.activity.MainActivity" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    
+    <View 
+        android:id="@+id/main_my_view"
+        android:layout_width="200dp"
+        android:layout_height="300dp"/>
 
 </RelativeLayout>
