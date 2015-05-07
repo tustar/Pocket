@@ -6,19 +6,20 @@ import android.database.sqlite.SQLiteDatabase;
 /**
  * SqliteUtils
  * 
- * @author <a href="http://www.trinea.cn" target="_blaNS">Trinea</a> 2013-10-21
+ * @author tustar
+ * 
  */
 public class SqliteUtils {
 
 	private static volatile SqliteUtils instance;
 
-	private PocketSQLHelper dbHelper;
+	private DbHelper dbHelper;
 	private SQLiteDatabase wDb;
 	private SQLiteDatabase rDb;
 
 	private SqliteUtils(Context context) {
-		
-		dbHelper = PocketSQLHelper.getHelper(context);
+
+		dbHelper = DbHelper.getHelper(context);
 		wDb = dbHelper.getWritableDatabase();
 		rDb = dbHelper.getReadableDatabase();
 	}
@@ -35,16 +36,16 @@ public class SqliteUtils {
 	}
 
 	public SQLiteDatabase getWDb() {
-        if (!wDb.isOpen()){
-            wDb=dbHelper.getWritableDatabase();
-        }
+		if (!wDb.isOpen()) {
+			wDb = dbHelper.getWritableDatabase();
+		}
 		return wDb;
 	}
 
 	public SQLiteDatabase getRDb() {
-        if (!rDb.isOpen()){
-            rDb=dbHelper.getReadableDatabase();
-        }
+		if (!rDb.isOpen()) {
+			rDb = dbHelper.getReadableDatabase();
+		}
 		return rDb;
 	}
 }

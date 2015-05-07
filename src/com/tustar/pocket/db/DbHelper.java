@@ -7,20 +7,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.tustar.pocket.utils.Logger;
 
-public class PocketSQLHelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper {
 
-	public static final String TAG = PocketSQLHelper.class.getSimpleName();
-	private static PocketSQLHelper helper;
+	public static final String TAG = DbHelper.class.getSimpleName();
+	private static DbHelper helper;
 
-	public static PocketSQLHelper getHelper(Context context) {
+	public static DbHelper getHelper(Context context) {
 		if (helper == null) {
-			helper = new PocketSQLHelper(context.getApplicationContext(), null,
+			helper = new DbHelper(context.getApplicationContext(), null,
 					DbCommon.DB_VERSION);
 		}
 		return helper;
 	}
 
-	public PocketSQLHelper(Context context, CursorFactory factory, int version) {
+	public DbHelper(Context context, CursorFactory factory, int version) {
 		super(context, DbCommon.DB_NAME, factory, version);
 	}
 
